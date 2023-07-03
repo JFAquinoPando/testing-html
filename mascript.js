@@ -14,7 +14,8 @@ const formularios = fetch("http://128.199.13.108:81/forms.php")
 const selectFormEscuchado = document.querySelector("#formulario")
 selectFormEscuchado.addEventListener("change", (e)=>{
     console.log("cambio", e.target.value)
-    const resp = fetch("http://128.199.13.108:81/obtener.php?formulario="+e.target.value)
+    const url = "https://128.199.13.108" //"http://128.199.13.108:81"
+    const resp = fetch(url+"/obtener.php?formulario="+e.target.value)
     .then(res => res.json())
     .then(datos => {
         let texto = `<h3>Ha seleccionado el formulario ${datos.id} <h3>
