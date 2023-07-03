@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creador de Formulario Dinámico</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-item" draggable="true" ondragstart="drag(event)" data-type="input-text">Campo de texto</div>
+    <div class="sidebar-item" draggable="true" ondragstart="drag(event)" data-type="input-number">Campo numérico</div>
+    <div class="sidebar-item" draggable="true" ondragstart="drag(event)" data-type="input-checkbox">Casilla de verificación</div>
+    <div class="sidebar-item" draggable="true" ondragstart="drag(event)" data-type="input-radio">Botón de opción</div>
+    <div class="sidebar-item" draggable="true" ondragstart="drag(event)" data-type="input-file-camara">Para camara</div>
+  </div>
+
+  <div class="container">
+    <h1>Creador de Formulario</h1>
+    <form id="myForm" ondrop="drop(event)" ondragover="allowDrop(event)"></form>
+    <button id="saveButton">Guardar</button>
+  </div>
+
+  <script src="script_prd.js"></script>
+</body>
+</html>
