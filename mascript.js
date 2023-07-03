@@ -1,4 +1,5 @@
-const formularios = fetch("http://128.199.13.108:81/forms.php")
+let miUrl = "https://128.199.13.108" //"http://128.199.13.108:81"
+const formularios = fetch(miUrl+"/forms.php")
 .then(res => res.json())
 .then(datos => {
     console.log(datos)
