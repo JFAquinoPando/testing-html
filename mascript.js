@@ -14,7 +14,7 @@ const formularios = fetch(miUrl+"/forms.php")
     selectForm.innerHTML =txt
 }).catch(
     error => {
-        console.log("hay error?")
+        console.log("hay error?", error.message)
     }
 ).finally(() => {
     console.log("fetch finalizado!")
