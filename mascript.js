@@ -1,6 +1,9 @@
 let miUrl = "https://128.199.13.108" //"http://128.199.13.108:81"
 const formularios = fetch(miUrl+"/forms.php")
-.then(res => res.json())
+.then(res => {
+    console.log("algo en el res?", res)
+    return res.json()
+})
 .then(datos => {
     console.log(datos)
     const selectForm = document.querySelector("#formulario")
@@ -9,6 +12,12 @@ const formularios = fetch(miUrl+"/forms.php")
         txt += `<option value='${formId}'>Formulario ${formId}</option>`
     })
     selectForm.innerHTML =txt
+}).catch(
+    error => {
+        console.log("hay error?")
+    }
+).finally(() => {
+    console.log("fetch finalizado!")
 })
 
 
