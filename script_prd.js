@@ -72,8 +72,8 @@ function showFieldOptions(formElement) {
     requiredLabel.textContent = "Requerido";
     requiredLabel.appendChild(requiredCheckbox);
     editMenu.appendChild(requiredLabel);
-    
-    
+
+
 
     // Mostrar atributos adicionales
     for (var i = 0; i < attributes.length; i++) {
@@ -106,29 +106,29 @@ function showFieldOptions(formElement) {
         formElement.querySelector("input").required = requiredCheckbox.checked;
     });
 
-    
+
     /*Se agrega boton de cerrado */
     const botonCierre = document.createElement("button");
     botonCierre.textContent = "Cerrar";
     botonCierre.className = "cerrar"
     editMenu.appendChild(botonCierre);
-    
+
     // Agregar el menú de edición al formulario
     document.getElementById("myForm").appendChild(editMenu);
 
     // Eliminar el menú de edición cuando se haga clic fuera de él
-    
+
 
     document.querySelector("#myForm").addEventListener("click", (ev) => {
         console.log("veamos el target!", ev.target)
-        if (ev.target.className==="cerrar"){
+        if (ev.target.className === "cerrar") {
             ev.preventDefault();
             editMenu.remove();
         }
         //if (!editMenu.contains(ev.target)) {editMenu.remove();}
     })
-    
-    
+
+
     /*window.addEventListener("click", function(event) {
         console.log("quitamos")
         if (!editMenu.contains(event.target)) {
@@ -147,26 +147,26 @@ saveButton.addEventListener("click", function(event) {
 
     // Guarda el HTML en el LocalStorage
     //const url = 'http://128.199.13.108:81/index.php';
-    const url = 'https://128.199.13.108/index.php';
+    const url = 'http://captura.unoup.com/captura/indexr.php' //'https://128.199.13.108/index.php';
     const data = {
         datos: formHTML // Puedes ajustar los datos que deseas enviar
     };
 
     fetch(url, {
-        method: 'POST',
-        headers: {
+            method: 'POST',
+            headers: {
                 'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+            },
+            body: JSON.stringify(data)
         })
-  .then(response => response.text())
-  .then(result => {
-      console.log(result); // Aquí puedes procesar la respuesta del servidor
-  })
-  .catch(error => {
-      console.error('Error:', error);
-  });
-    
+        .then(response => response.text())
+        .then(result => {
+            console.log(result); // Aquí puedes procesar la respuesta del servidor
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
 
     // Opcional: Muestra un mensaje de confirmación
     alert("Formulario guardado en el LocalStorage");
