@@ -147,7 +147,7 @@ saveButton.addEventListener("click", function(event) {
 
     // Guarda el HTML en el LocalStorage
     //const url = 'http://128.199.13.108:81/index.php';
-    const url = 'http://captura.unoup.com/captura/indexr.php' //'https://128.199.13.108/index.php';
+    const url = 'https://captura.unoup.com/captura/indexr.php' //'https://128.199.13.108/index.php';
     const data = {
         datos: formHTML // Puedes ajustar los datos que deseas enviar
     };
